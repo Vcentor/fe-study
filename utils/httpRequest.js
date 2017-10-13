@@ -11,7 +11,7 @@
  *    }
  * 
  */
-function jsonp(options) {
+export function Jsonp(options) {
 	options = options || {};
 	var cb_field_name = options.callback || 'callback';
 	return new Promise(function (resolve, reject) {
@@ -60,7 +60,7 @@ function jsonp(options) {
  *	  };
  *
  */
-function ajax(options) {
+export function Ajax(options) {
 	options = options || {};
 	options.type = (options.type || 'GET').toUpperCase();
 	return new Promise(function (resolve, reject) {
@@ -99,9 +99,4 @@ function _formatParams(data) {
 
 	let result = arr.join('&');
 	return result;
-}
-
-export default {
-	jsonp,
-	ajax
 }
